@@ -10,7 +10,7 @@ const About = () => {
                     <article className="about-text">
                         <h2>Little Lemon</h2>
                         <h3>Chicago</h3>
-                        <p>This is where the restaurant description will be.</p>
+                        <p>Little Lemon is a family-owned Mediterranean restaurant that brings the vibrant flavors of the Mediterranean to the heart of Chicago. It is the realization of a lifelong dream for brothers Mario and Adrian, who pour their passion for cooking into every dish. Inspired by family recipes, their menu is a celebration of fresh, seasonal ingredients.</p>
                     </article>
                     <div className="about-images">
                         <img src={ownerChefA} alt="Chefs in the kitchen." className="about-image-1" />

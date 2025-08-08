@@ -3,35 +3,36 @@ import crlyWoman from "../assets/images/crlywoman.jpg";
 import smilingMan from "../assets/images/smilingman.jpg";
 import blndeWoman from "../assets/images/blndewoman.jpg";
 import bundledMan from "../assets/images/bundledman.jpg";
+import { FaStar } from 'react-icons/fa';
 
 const Testimonials = () => {
     const testimonialsData =[
         {
             id: 1,
-            rating: "Rating",
+            rating: 5,
             customerName: "Asahi",
-            customerPhoto: {crlyWoman},
+            customerPhoto: crlyWoman,
             review: "Great food and friendly servers."
         },
         {
             id: 2,
-            rating: "Rating",
+            rating: 5,
             customerName: "Razhon",
-            customerPhoto: {smilingMan},
+            customerPhoto: smilingMan,
             review: "Tried the greek salad and it was so crisp and refreshing."
         },
         {
             id: 3,
-            rating: "Rating",
+            rating: 5,
             customerName: "Neena",
-            customerPhoto: {blndeWoman},
+            customerPhoto: blndeWoman,
             review: "The best lemon dessert in town."
         },
         {
             id: 4,
-            rating: "Rating",
-            customerName: "Maximillian",
-            customerPhoto: {bundledMan},
+            rating: 4,
+            customerName: Maximillian,
+            customerPhoto: bundledMan,
             review: "On the weekends it's sometimes hard to get a table, so book in advance if you can."
         }
     ];
@@ -43,7 +44,14 @@ const Testimonials = () => {
                     {testimonialsData.map(testimonial => (
                         <article key={testimonial.id} className="testimonial-card">
                             <div className="rating">
-                                <span className="stars">{testimonial.rating}</span>
+                                {[...Array(5)].map((star, index) => {
+                                    return (
+                                        <FaStar
+                                            key={index}
+                                            color={index < testimonial.rating ? "#FFD700" : "#e4e5e9"}
+                                        />
+                                    );
+                                })}
                             </div>
                             <div className="customer-info">
                                 <img
