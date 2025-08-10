@@ -1,4 +1,5 @@
 import React from 'react';
+import logo2 from '../assets/images/logo2.png';
 
 const Footer = () => {
     return (
@@ -7,7 +8,7 @@ const Footer = () => {
                 <div className="footer-content">
 
                     <div className="footer-logo">
-                        <img src="" alt="Little Lemon" />
+                        <img src={logo2} alt="Little Lemon" />
                     </div>
                     {}
                     <nav className="footer-nav doormat-nav">

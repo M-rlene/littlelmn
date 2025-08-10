@@ -31,7 +31,7 @@ const Testimonials = () => {
         {
             id: 4,
             rating: 4,
-            customerName: Maximillian,
+            customerName: "Maximillian",
             customerPhoto: bundledMan,
             review: "On the weekends it's sometimes hard to get a table, so book in advance if you can."
         }
