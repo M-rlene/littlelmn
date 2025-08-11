@@ -99,6 +99,9 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
             >
                 <option>Birthday</option>
                 <option>Anniversary</option>
+                <option>Corporate</option>
+                <option>Private</option>
+                <option>Casual</option>
             </select>
 
             <input

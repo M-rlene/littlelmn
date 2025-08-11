@@ -7,9 +7,9 @@ const BookingPage = ({ availableTimes, dispatch, submitForm }) => {
     return (
         <section>
             <h1>Reserve a Table</h1>
-            <BookingForm 
-                availableTimes={availableTimes} 
-                dispatch={dispatch} 
+            <BookingForm
+                availableTimes={availableTimes}
+                dispatch={dispatch}
                 submitForm={submitForm} // Pass the prop down to the form
             />
         </section>

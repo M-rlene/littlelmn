@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route, useNavigate}from 'react-router-dom';
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Homepage from "./components/Homepage";
 import BookingPage from "./components/BookingPage";
 import ConfirmedBooking from "./components/ConfirmedBooking";
 import { fetchAPI, submitAPI } from './api';
@@ -31,7 +32,8 @@ const Main = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
+      <Route path="/" element={<Homepage />} />
+      <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
       <Route path="/confirmed" element={<ConfirmedBooking />} />
     </Routes>
   );

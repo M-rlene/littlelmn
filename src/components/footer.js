@@ -1,5 +1,6 @@
 import React from 'react';
 import logo2 from '../assets/images/logo2.png';
+import {Link} from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -8,26 +9,27 @@ const Footer = () => {
                 <div className="footer-content">
 
                     <div className="footer-logo">
-                        <img src={logo2} alt="Little Lemon" />
+                        <Link to="/">
+                            <img src={logo2} alt="Little Lemon" />
+                        </Link>
                     </div>
                     {}
                     <nav className="footer-nav doormat-nav">
                         <h4>Navigation</h4>
                         <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#menu">Menu</a></li>
-                            <li><a href="#reservations">Reservations</a></li>
-                            <li><a href="#order">Order Online</a></li>
-                            <li><a href="#login">Login</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/menu">Menu</Link></li>
+                            <li><Link to="/booking">Reservations</Link></li>
+                            <li><Link to="/order">Order Online</Link></li>
+                            <li><Link to="/login">Login</Link></li>
                         </ul>
                     </nav>
 
                     <div className="footer-contact">
                         <h4>Contact</h4>
                         <address>
-                            <p>1234 Eatingwell Way,
-                                Chicago, Illinois 12345</p>
+                            <p>1234 Eatingwell Way, Chicago, Illinois 12345</p>
                             <p><a href="tel:+1234567890">Phone Number</a></p>
                             <p><a href="mailto:info@littlelemon.com">Email</a></p>
                         </address>
