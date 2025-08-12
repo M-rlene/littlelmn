@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
-test('renders the Reserve a Table heading on the booking page', () => {
+test('renders the Little Lemon heading on the homepage', () => {
     render(<App />);
-    const headingElement = screen.getByText("Reserve a Table");
+    const headingElement = screen.getByRole('heading', { level: 1, name: 'Little Lemon' });
     expect(headingElement).toBeInTheDocument();
 });

@@ -7,7 +7,6 @@ const seededRandom = (seed) => {
 
 export const fetchAPI = (date) => {
   const result = [];
-  // The 'date' variable MUST be a valid Date object for this line to work.
   const random = seededRandom(date.getDate());
 
   for (let i = 17; i <= 23; i++) {
