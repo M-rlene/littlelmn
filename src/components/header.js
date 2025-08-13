@@ -15,38 +15,40 @@ const Header = () => {
 
     return (
         <header className="site-header">
-            <nav className="main-navigation" role="navigation" aria-label="Main navigation">
-                <div className="logo">
-                    <Link to="/" onClick={closeMenu}>
-                        <img src={logo} alt="Little Lemon Restaurant - Home" />
-                    </Link>
-                </div>
+            <div className="container">
+                <nav className="main-navigation" role="navigation" aria-label="Main navigation">
+                    <div className="logo">
+                        <Link to="/" onClick={closeMenu}>
+                            <img src={logo} alt="Little Lemon Restaurant - Home" />
+                        </Link>
+                    </div>
 
                 {/* Mobile menu button */}
-                <button
-                    className="mobile-menu-toggle"
-                    onClick={toggleMenu}
-                    aria-expanded={isMenuOpen}
-                    aria-controls="main-menu"
-                    aria-label="Toggle navigation menu"
-                >
-                    <span className="hamburger-line"></span>
-                    <span className="hamburger-line"></span>
-                    <span className="hamburger-line"></span>
-                </button>
+                    <button
+                        className="mobile-menu-toggle"
+                        onClick={toggleMenu}
+                        aria-expanded={isMenuOpen}
+                        aria-controls="main-menu"
+                        aria-label="Toggle navigation menu"
+                    >
+                        <span className="hamburger-line"></span>
+                        <span className="hamburger-line"></span>
+                        <span className="hamburger-line"></span>
+                    </button>
 
-                <ul
+                    <ul
                     className={`nav-menu ${isMenuOpen ? 'nav-menu-open' : ''}`}
                     id="main-menu"
-                >
-                    <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-                    <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-                    <li><Link to="/menu" onClick={closeMenu}>Menu</Link></li>
-                    <li><Link to="/booking" onClick={closeMenu}>Reservations</Link></li>
-                    <li><Link to="/order" onClick={closeMenu}>Order Online</Link></li>
-                    <li><Link to="/login" onClick={closeMenu}>Login</Link></li>
-                </ul>
-            </nav>
+                    >
+                        <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+                        <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+                        <li><Link to="/menu" onClick={closeMenu}>Menu</Link></li>
+                        <li><Link to="/booking" onClick={closeMenu}>Reservations</Link></li>
+                        <li><Link to="/order" onClick={closeMenu}>Order Online</Link></li>
+                        <li><Link to="/login" onClick={closeMenu}>Login</Link></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
     );
 };
