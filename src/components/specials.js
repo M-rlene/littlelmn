@@ -39,7 +39,7 @@ const Specials = () => {
         <section className="specials-section">
             <div className="container">
                 <div className="specials-header">
-                    <h2>Specials</h2>
+                    <h2>This week's specials!</h2>
                     <button className="primary-button">Online Menu</button>
                 </div>
                 <div className="specials-grid">

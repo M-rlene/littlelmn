@@ -5,12 +5,13 @@
 body {
     margin: 0;
     font-family: 'Karla', sans-serif;
-    color: #495e57;
+    color: #495e57; /* Primary Text Color */
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Markazi Text', serif;
-    font-weight: normal;
+    font-weight: 500; /* Medium weight for Markazi Text */
+    margin-top: 0;
 }
 
 a {
@@ -19,7 +20,11 @@ a {
 }
 
 a:hover {
-    color: #f4ce14;
+    color: #f4ce14; /* Highlight color on hover */
+}
+
+section {
+    margin-bottom: 60px;
 }
 
 .container {
@@ -37,26 +42,29 @@ a:hover {
     border-radius: 16px;
     font-weight: bold;
     cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .primary-button:hover,
 .primary-button:focus {
     background-color: #ee9972;
     color: #ffffff;
+    transform: translateY(-2px);
 }
 
-/* --- Header and Navigation Styling (Refined) --- */
+/* --- Header and Navigation --- */
 .site-header {
     background-color: #ffffff;
-    padding: 10px 20px;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .main-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
 
 .logo img {
@@ -68,73 +76,85 @@ a:hover {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .nav-menu li a {
     text-decoration: none;
     color: #333333;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #495e57;
+    border-radius: 2px;
 }
 
 /* --- Hero Section --- */
 .hero-section {
     background-color: #495e57;
     color: #ffffff;
+    padding: 40px 0;
+}
+
+.hero-section .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 20px;
-    position: relative;
-    z-index: 1;
+    gap: 40px;
 }
 
 .hero-content {
     flex: 1;
-    max-width: 50%;
 }
 
 .hero-content h1 {
     font-size: 4rem;
     color: #f4ce14;
     margin: 0;
+    line-height: 1;
 }
 
 .hero-content h2 {
     font-size: 2.5rem;
-    margin-top: -15px;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    max-width: 300px;
+    font-size: 1.1rem;
+    max-width: 400px;
     line-height: 1.5;
+    margin-bottom: 30px;
 }
 
 .hero-image {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
 }
 
 .hero-image img {
-    width: 100%;
-    max-width: 400px;
-    height: 450px;
+    width: 375px;
+    height: 420px;
     object-fit: cover;
     border-radius: 16px;
-    position: relative;
-    top: 50px;
 }
 
 /* --- Specials Section --- */
-.specials-section {
-    padding: 80px 0;
-}
-
 .specials-header {
     display: flex;
     justify-content: space-between;
@@ -144,11 +164,12 @@ a:hover {
 
 .specials-header h2 {
     font-size: 3rem;
+    margin-bottom: 0;
 }
 
 .specials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -156,6 +177,15 @@ a:hover {
     background-color: #edefee;
     border-radius: 16px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.special-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .special-card img {
@@ -166,12 +196,16 @@ a:hover {
 
 .special-content {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .special-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .special-header h3 {
@@ -182,11 +216,13 @@ a:hover {
 .special-header .price {
     color: #ee9972;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .special-content p {
     line-height: 1.5;
     color: #495e57;
+    flex-grow: 1;
 }
 
 .order-delivery-btn {
@@ -196,49 +232,43 @@ a:hover {
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-    padding: 0;
+    padding: 10px 0 0 0;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
 }
 
 .order-delivery-btn:hover {
     color: #ee9972;
 }
 
-.order-delivery-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-}
-
-.order-delivery-btn svg {
-    flex-shrink: 0;
-}
-
 /* --- Testimonials Section --- */
 .testimonials-section {
-    background-color: #495e57;
+    background-color: #f4ce14;
     padding: 80px 0;
-    color: #ffffff;
     text-align: center;
 }
 
 .testimonials-section h2 {
     font-size: 3rem;
     margin-bottom: 40px;
+    color: #333333;
 }
 
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 30px;
 }
 
 .testimonial-card {
-    background-color: #f4ce14;
-    color: #000000;
+    background-color: #ffffff;
+    color: #333333;
     padding: 20px;
-    border-radius: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -246,6 +276,7 @@ a:hover {
 
 .rating {
     margin-bottom: 15px;
+    color: #f4ce14;
 }
 
 .customer-info {
@@ -264,15 +295,15 @@ a:hover {
 
 .customer-name {
     font-weight: bold;
+    font-family: 'Karla', sans-serif;
+}
+
+.testimonial-card blockquote p {
+    font-style: italic;
 }
 
 /* --- About Section --- */
-.about-section {
-    padding: 80px 0;
-    background-color: #edefee;
-}
-
-.about-content {
+.about-section .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -285,179 +316,146 @@ a:hover {
 
 .about-text h2 {
     font-size: 3.5rem;
-    color: #f4ce14;
+    color: #495e57;
     margin: 0;
 }
 
 .about-text h3 {
     font-size: 2rem;
-    margin-top: -15px;
+    margin: 0 0 20px 0;
 }
 
 .about-images {
     flex: 1;
     position: relative;
-    height: 400px;
+    height: 350px;
 }
 
 .about-image-1,
 .about-image-2 {
-    width: 250px;
-    height: 300px;
+    width: 270px;
+    height: 330px;
     object-fit: cover;
     border-radius: 16px;
     position: absolute;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .about-image-1 {
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
 }
 
 .about-image-2 {
     bottom: 0;
-    right: 0;
-    z-index: 1;
+    right: 40px;
+    z-index: 2;
 }
 
 /* --- Footer Section --- */
 .site-footer {
     background-color: #495e57;
-    color: #ffffff;
-    padding: 40px 0;
+    color: #edefee;
+    padding: 50px 0;
+    margin-top: 60px;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    text-align: left;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-logo img {
-    height: 80px;
-    filter: brightness(0) invert(1);
-}
-
-.footer-nav ul,
-.footer-contact address,
-.footer-social .social-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    height: 100px;
 }
 
 .footer-nav h4,
 .footer-contact h4,
 .footer-social h4 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #f4ce14;
 }
 
+.footer-nav ul,
+.footer-contact address {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .footer-nav a,
-.footer-contact a,
-.footer-social a {
-    color: #ffffff;
+.footer-contact p,
+.footer-contact a {
+    color: #edefee;
     text-decoration: none;
-    line-height: 1.5;
+    line-height: 2;
     transition: color 0.3s ease;
 }
 
 .footer-nav a:hover,
-.footer-contact a:hover,
-.footer-social a:hover {
+.footer-contact a:hover {
     color: #ee9972;
+    text-decoration: underline;
 }
 
-/* --- Media Queries for Responsiveness --- */
-@media (max-width: 768px) {
-    .hero-section,
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
+.social-links {
+    display: flex;
+    gap: 20px;
+}
 
-    .hero-content {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
+.social-links a {
+    color: #f4ce14;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
 
-    .hero-image {
-        justify-content: center;
-        margin-bottom: 50px;
-    }
-
-    .hero-image img {
-        top: 0;
-    }
-
-    .about-images {
-        height: 350px;
-        margin-bottom: 20px;
-    }
-
-    .about-image-1,
-    .about-image-2 {
-        width: 200px;
-        height: 250px;
-    }
-
-    .about-image-1 {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 0;
-    }
-
-    .about-image-2 {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+.social-links a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 /* --- Booking Page Styles --- */
 .booking-page-container {
-    background-color: #edefee;
-    min-height: 100vh;
     padding: 50px 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    min-height: 70vh;
 }
 
-.booking-page-content {
+.booking-page-container h1 {
+    font-size: 3rem;
+    color: #495e57;
+    text-align: center;
+}
+
+.booking-form {
     background-color: #ffffff;
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-}
-
-.booking-page-content h2 {
-    text-align: center;
-    color: #495e57;
-    font-size: 3rem;
-    margin-bottom: 30px;
-}
-
-/* --- Booking Form Styles --- */
-.booking-form {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: grid;
-    gap: 20px;
+    gap: 25px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
 }
 
 .booking-form label {
     font-weight: bold;
-    color: #333333;
+    color: #495e57;
+    font-size: 1rem;
+    margin-bottom: -15px;
 }
 
 .booking-form input,
@@ -465,9 +463,21 @@ a:hover {
     width: 100%;
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     font-size: 1rem;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+
+.booking-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23495E57%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 0.65em auto;
+    padding-right: 40px;
 }
 
 .booking-form input:focus,
@@ -479,38 +489,90 @@ a:hover {
 
 .booking-form button {
     width: 100%;
+    margin-top: 10px;
 }
 
-/* Mobile Navigation Styles */
+.error-message {
+    color: #d32f2f;
+    font-size: 0.875rem;
+    margin-top: -15px;
+    margin-bottom: 5px;
+    text-align: left;
+}
 
-/* Mobile menu toggle button */
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
+/* --- Confirmation Page Styles --- */
+.confirmation-page {
+    display: flex;
     flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
-    position: relative;
-    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 70vh;
+    padding: 20px;
 }
 
-.hamburger-line {
-    width: 25px;
-    height: 3px;
-    background-color: #495e57;
-    margin: 3px 0;
-    transition: all 0.3s ease;
-    border-radius: 2px;
+.confirmation-page h1 {
+    color: #495e57;
+    font-size: 3rem;
 }
 
-/* Enhanced responsive navigation */
+.confirmation-page p {
+    font-size: 1.2rem;
+    color: #333333;
+}
+
+/* --- Media Queries for Responsiveness --- */
 @media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: flex;
+    .hero-section .container,
+    .about-section .container {
+        flex-direction: column;
+        text-align: center;
     }
 
+    .hero-image {
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .hero-image img {
+        width: 90vw;
+        height: auto;
+    }
+
+    .about-images {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        height: auto;
+        margin-top: 30px;
+    }
+
+    .about-image-1,
+    .about-image-2 {
+        position: static;
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-nav ul {
+        padding: 0;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Mobile Navigation */
     .nav-menu {
+        display: none;
         position: fixed;
         top: 0;
         right: -100%;
@@ -518,24 +580,25 @@ a:hover {
         width: 250px;
         background-color: #ffffff;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
         padding-top: 80px;
-        gap: 30px;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        gap: 0;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
         transition: right 0.3s ease;
         z-index: 1000;
     }
 
     .nav-menu-open {
+        display: flex;
         right: 0;
     }
 
+    .nav-menu li {
+        width: 100%;
+    }
+    
     .nav-menu li a {
         font-size: 1.2rem;
         padding: 15px 20px;
-        width: 100%;
-        text-align: center;
         display: block;
         border-bottom: 1px solid #edefee;
     }
@@ -544,12 +607,9 @@ a:hover {
         background-color: #f4ce14;
         color: #495e57;
     }
-}
 
-.error-message {
-    color: #d32f2f;
-    font-size: 0.875rem;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    .mobile-menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
 }
-

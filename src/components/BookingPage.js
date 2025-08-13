@@ -5,7 +5,7 @@ import BookingForm from './BookingForm';
 // Make sure BookingPage accepts the submitForm prop
 const BookingPage = ({ availableTimes, dispatch, submitForm }) => {
     return (
-        <section>
+        <section className="booking-page-container">
             <h1>Reserve a Table</h1>
             <BookingForm
                 availableTimes={availableTimes}
